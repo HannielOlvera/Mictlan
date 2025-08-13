@@ -1,3 +1,22 @@
+// Menú hamburguesa responsive
+document.addEventListener('DOMContentLoaded', function () {
+  const navToggle = document.querySelector('.nav-toggle');
+  const navLinks = document.querySelector('.nav-links');
+  if (navToggle && navLinks) {
+    navToggle.addEventListener('click', function () {
+      const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+      navToggle.setAttribute('aria-expanded', !expanded);
+      navLinks.classList.toggle('open');
+    });
+    // Cierra menú al hacer click en un enlace
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navToggle.setAttribute('aria-expanded', false);
+        navLinks.classList.remove('open');
+      });
+    });
+  }
+});
 // main.js - Lógica para la página del estudio de tatuaje
 
 document.addEventListener('DOMContentLoaded', function () {
