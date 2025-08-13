@@ -19,6 +19,7 @@
       --glass: rgba(255,255,255,0.03);
       --radius:12px;
       --maxw:1100px;
+      --header-height: 78px; /* valor por defecto; JS lo actualizará */
       font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
     }
 
@@ -27,9 +28,34 @@
     a{color:inherit;text-decoration:none}
     .wrap{max-width:var(--maxw);margin:0 auto;padding:18px}
 
-    /* NAV */
-    header{position:sticky;top:10px;z-index:90}
-    .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:10px;background:linear-gradient(180deg, rgba(255,255,255,0.015), transparent);border-radius:12px}
+    /* FIXED HEADER (mejor control desde CSS en lugar de inline) */
+    header.site-header{
+      position:fixed;
+      left:0;
+      right:0;
+      top:0;
+      height:var(--header-height);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      z-index:120;
+      background:linear-gradient(180deg,rgba(15,15,16,0.98),rgba(15,17,19,0.98));
+      backdrop-filter:blur(6px);
+      box-shadow:0 2px 16px #0002;
+    }
+    /* inner container para mantener ancho max */
+    .nav-inner{
+      width:100%;
+      max-width:var(--maxw);
+      padding:10px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      border-radius:12px;
+      background:linear-gradient(180deg, rgba(255,255,255,0.015), transparent);
+    }
+
     .brand{display:flex;gap:12px;align-items:center}
     .logo-img{width:56px;height:56px;border-radius:12px;object-fit:cover;box-shadow:0 8px 30px rgba(0,0,0,0.6);border:1px solid rgba(255,255,255,0.03)}
 
@@ -44,21 +70,36 @@
     .cta{background:linear-gradient(90deg,var(--accent),var(--accent-2));padding:8px 12px;border-radius:10px;color:#111;font-weight:700}
 
     .burger{display:inline-grid;width:44px;height:44px;place-items:center;border-radius:10px;background:transparent;border:1px solid rgba(255,255,255,0.04)}
-    .mobile-menu{display:none;margin-top:12px;padding:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);border-radius:12px}
+    .mobile-menu{display:none;margin-top:12px;padding:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);border-radius:12px;position:absolute;left:18px;right:18px;top:calc(var(--header-height) + 10px);z-index:110}
 
     /* HERO */
+    main.site-main{
+      /* importante: deja espacio para el header fijo */
+      padding-top: calc(var(--header-height) + 18px);
+    }
     .hero{display:grid;grid-template-columns:1fr;gap:18px;align-items:center;padding:22px;border-radius:16px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.006));box-shadow:0 10px 40px rgba(0,0,0,0.6)}
     .kicker{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.02);color:var(--muted);font-weight:600;font-size:13px}
     .hero h1{font-family: 'Cinzel', serif; font-size:26px; margin:8px 0 6px}
     .hero p{margin:0 0 12px;color:var(--muted);max-width:60ch}
     .actions{display:flex;gap:10px;flex-wrap:wrap}
 
+    /* sticky image at the right of hero */
+    .hero-right {
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      /* sticky keeps it visible while the hero is in view */
+      position:sticky;
+      top: calc(var(--header-height) + 12px);
+      z-index:3;
+    }
+
     /* layout helpers */
     .sections{margin-top:16px;display:grid;gap:16px}
     .card{background:var(--card);padding:14px;border-radius:12px;box-shadow:0 6px 20px rgba(0,0,0,0.6)}
     .grid-2{display:grid;grid-template-columns:1fr;gap:12px}
 
-    /* SERVICES — readable */
+    /* rest kept similar (abrev.) */
     .services-grid{display:grid;gap:12px}
     .service-item{display:flex;gap:12px;align-items:flex-start;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.006));padding:12px;border-radius:12px}
     .service-badge{width:44px;height:44px;border-radius:10px;display:grid;place-items:center;font-weight:700;background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#111}
@@ -66,49 +107,24 @@
     .service-body strong{display:block;margin-bottom:6px;color:#fff}
     .service-body p{margin:0;color:#ddd}
 
-    /* CTA improved */
-    .cta-block {
-      margin-top:1.2rem;
-      padding:14px;
-      border-radius:12px;
-      display:flex;
-      flex-direction:column;
-      gap:8px;
-      align-items:flex-start;
-      background: linear-gradient(90deg, rgba(240,178,74,0.12), rgba(255,92,124,0.04));
-      -webkit-backdrop-filter: blur(6px);
-      backdrop-filter: blur(6px);
-    }
-    .cta-block .cta-title {
-      font-weight:800;
-      font-size:1rem;
-      line-height:1.1;
-      color:#111;
-    }
-    .mictlan-mark {
-      background: linear-gradient(90deg, var(--accent), var(--accent-2));
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      font-weight:900;
-      letter-spacing:1px;
-      text-transform:uppercase;
-    }
-    .cta-block .cta-note { font-size:0.95rem; color:#222 }
+    .cta-block { margin-top:1.2rem; padding:14px; border-radius:12px; display:flex; flex-direction:column; gap:8px; align-items:flex-start; background: linear-gradient(90deg, rgba(240,178,74,0.12), rgba(255,92,124,0.04)); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
+    .cta-block .cta-title { font-weight:800; font-size:1rem; line-height:1.1; color:#111; }
+    .mictlan-mark { background: linear-gradient(90deg, var(--accent), var(--accent-2)); -webkit-background-clip: text; background-clip: text; color: transparent; font-weight:900; letter-spacing:1px; text-transform:uppercase; }
 
-    /* GALLERY & VIDEO */
     .gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
     .gallery img{width:100%;height:160px;object-fit:cover;border-radius:10px;display:block}
     .video-wrap{border-radius:10px;overflow:hidden;background:#000}
     .responsive-video{width:100%;height:100%;max-height:360px;object-fit:cover;display:block}
 
-    /* FORM */
     form{display:grid;gap:10px}
     input,textarea,select{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:12px;border-radius:10px;color:inherit;font-size:14px}
     .submit{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#111;padding:12px;border-radius:12px;border:none;font-weight:700}
     .muted{color:var(--muted);font-size:13px}
     .center{display:flex;align-items:center;justify-content:center}
     .visually-hidden{position:absolute !important;height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px);white-space:nowrap}
+
+    /* ensure anchor targets are not hidden by fixed header */
+    section, .card, .hero { scroll-margin-top: calc(var(--header-height) + 12px); }
 
     /* responsive tweaks */
     @media(min-width:880px){
@@ -117,17 +133,25 @@
       .gallery{grid-template-columns:repeat(3,1fr)}
       .menu{display:flex}
       .mobile-menu{display:none}
+      .hero-right { top: calc(var(--header-height) + 24px); }
     }
     @media(max-width:879px){
       .menu{display:none}
       .mobile-menu{display:block}
       .gallery img{height:140px}
+      /* mobile: ajustar tamaño header si hace falta */
+      :root { --header-height: 72px; }
     }
+
+    /* simple fade helpers used por tu JS */
+    .fade-init{opacity:0;transform:translateY(8px);transition:all 520ms cubic-bezier(.2,.9,.2,1)}
+    .fade-in{opacity:1;transform:none}
   </style>
 </head>
 <body>
-  <header class="wrap" style="position:sticky;top:0;z-index:120;background:linear-gradient(180deg,rgba(15,15,16,0.98),rgba(15,17,19,0.98));backdrop-filter:blur(6px);border-radius:0 0 12px 12px;box-shadow:0 2px 16px #0002;">
-    <nav class="nav-inner" aria-label="Navegación principal" style="position:sticky;top:0;z-index:100;background:linear-gradient(180deg,rgba(15,15,16,0.98),rgba(15,17,19,0.98));backdrop-filter:blur(6px);border-radius:12px 12px 0 0;">
+  <!-- Header fijo: use clase site-header -->
+  <header class="site-header" role="banner" id="siteHeader">
+    <div class="nav-inner" aria-label="Navegación principal">
       <div class="brand" style="position:relative;z-index:2;background:none;">
         <img src="assets/Mic.jpeg" alt="logo Mictlan" class="logo-img" />
         <div class="wordmark">
@@ -137,7 +161,7 @@
       </div>
 
       <div class="nav-toggle" style="position:relative;z-index:2;">
-        <div class="menu" role="menubar" style="position:sticky;top:0;z-index:100;background:linear-gradient(180deg,rgba(15,15,16,0.98),rgba(15,17,19,0.98));border-radius:12px;box-shadow:0 2px 12px #0002;">
+        <div class="menu" role="menubar" style="background:none;border-radius:8px;padding:6px;">
           <a class="nav-link" href="#inicio">Inicio</a>
           <a class="nav-link" href="#servicios">Servicios</a>
           <a class="nav-link" href="#portafolio">Portafolio</a>
@@ -152,9 +176,10 @@
           </svg>
         </button>
       </div>
-    </nav>
+    </div>
 
-    <div id="mobileMenu" class="mobile-menu" hidden>
+    <!-- mobile menu (posicionado debajo del header fijo) -->
+    <div id="mobileMenu" class="mobile-menu" hidden aria-hidden="true">
       <div style="display:flex;flex-direction:column;gap:8px">
         <a class="nav-link" href="#inicio">Inicio</a>
         <a class="nav-link" href="#servicios">Servicios</a>
@@ -165,7 +190,8 @@
     </div>
   </header>
 
-  <main class="wrap" id="top">
+  <!-- MAIN: con padding-top compensando el header fijo -->
+  <main class="site-main wrap" id="top">
     <section id="inicio" class="hero card" tabindex="-1">
       <div>
         <div class="kicker">Servicio a domicilio · Bioseguridad</div>
@@ -177,7 +203,8 @@
         </div>
       </div>
 
-      <div class="center" aria-hidden>
+      <!-- Hero-right: imagen/ícono que se mantiene sticky para que no se tape -->
+      <div class="hero-right" aria-hidden>
         <div style="width:220px;border-radius:14px;padding:18px;background:linear-gradient(180deg,rgba(255,255,255,0.01),transparent);display:flex;flex-direction:column;align-items:center;justify-content:center">
           <svg width="110" height="110" viewBox="0 0 100 100" fill="none" aria-hidden>
             <defs>
@@ -190,6 +217,9 @@
         </div>
       </div>
     </section>
+
+    <!-- resto del contenido tal cual (se recortó por brevedad en la explicación),
+         pero aquí incluyo el contenido que tenías para que el documento sea completo. -->
 
     <!-- ARTISTA -->
     <section id="artista" class="card">
@@ -215,7 +245,6 @@
         <div class="service-item"><div class="service-badge">5</div><div class="service-body"><strong>Servicio exclusivo</strong><p>Disponible en Querétaro y alrededores — traslado incluido en cotización.</p></div></div>
       </div>
 
-      <!-- IMPROVED CTA BLOCK -->
       <div class="cta-block" role="region" aria-label="Llamado a la acción - reservar cita" style="background:linear-gradient(90deg,#f0b24a 80%,#ff5c7c 100%);box-shadow:0 2px 16px #0002;padding:18px 16px;border-radius:14px;display:flex;flex-direction:column;gap:10px;align-items:flex-start;">
         <div class="cta-title" style="color:#222;font-size:1.08rem;font-weight:800;">
           ¡Agenda tu cita y vive la experiencia <span class="mictlan-mark" style="color:#ff5c7c;background:none;-webkit-background-clip:initial;background-clip:initial;text-shadow:0 2px 8px #fff,0 0 2px #f0b24a;">MICTLAN</span> en tu espacio!
@@ -296,18 +325,45 @@
   </main>
 
   <script>
-    // safe helpers (check existence)
+    // --- Header / layout helpers -----------------------------------------
+    const siteHeader = document.getElementById('siteHeader');
+
+    function updateHeaderHeightVar() {
+      if (!siteHeader) return;
+      // medir la altura real del header y guardarla en la variable CSS
+      const h = siteHeader.offsetHeight || 76;
+      document.documentElement.style.setProperty('--header-height', h + 'px');
+
+      // también asegurarnos de que el mobileMenu (abierto) se posicione debajo del header
+      const mobileMenu = document.getElementById('mobileMenu');
+      if (mobileMenu) {
+        mobileMenu.style.top = (h + 10) + 'px';
+      }
+    }
+
+    // ejecuta al cargar y al cambiar el tamaño
+    window.addEventListener('load', updateHeaderHeightVar);
+    window.addEventListener('resize', updateHeaderHeightVar);
+
+    // --- mobile menu toggle ----------------------------------------------
     const navToggler = document.getElementById('navToggler');
     const mobileMenu = document.getElementById('mobileMenu');
     if (navToggler && mobileMenu) {
       navToggler.addEventListener('click', () => {
         const expanded = navToggler.getAttribute('aria-expanded') === 'true';
         navToggler.setAttribute('aria-expanded', String(!expanded));
-        if (mobileMenu.hasAttribute('hidden')) mobileMenu.removeAttribute('hidden'); else mobileMenu.setAttribute('hidden','');
+        if (mobileMenu.hasAttribute('hidden')) {
+          mobileMenu.removeAttribute('hidden');
+          mobileMenu.setAttribute('aria-hidden','false');
+        } else {
+          mobileMenu.setAttribute('hidden','');
+          mobileMenu.setAttribute('aria-hidden','true');
+        }
       });
     }
 
-    // Smooth scroll + close mobile menu on link click
+    // --- smooth scroll con compensación por header fijo ------------------
+    // usamos offset para que al hacer scroll a un ancla no quede tapado por el header.
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         const href = this.getAttribute('href');
@@ -315,30 +371,40 @@
         const target = document.querySelector(href);
         if (!target) return;
         e.preventDefault();
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+        // esconder menú móvil si está abierto
         if (mobileMenu && !mobileMenu.hasAttribute('hidden')) {
           mobileMenu.setAttribute('hidden','');
+          mobileMenu.setAttribute('aria-hidden','true');
           if (navToggler) navToggler.setAttribute('aria-expanded','false');
         }
-        target.classList.add('section-focus');
-        setTimeout(()=> target.classList.remove('section-focus'), 1200);
+
+        // calcular offset
+        const headerHeight = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--header-height')) || 72;
+        const rect = target.getBoundingClientRect();
+        const absoluteY = window.scrollY + rect.top;
+        const targetY = Math.max(0, absoluteY - headerHeight - 12); // pequeño padding extra
+
+        window.scrollTo({ top: targetY, behavior: 'smooth' });
+
+        // accesibilidad: foco al target
+        target.setAttribute('tabindex','-1');
+        target.focus({ preventScroll: true });
+        setTimeout(()=> target.removeAttribute('tabindex'), 1200);
       });
     });
 
-    // Intersection observer: animations + lazy-load images & video source
+    // --- Intersection observer: anim + lazy load (tu código original) ---
     const io = new IntersectionObserver((entries, obs) => {
       entries.forEach(entry => {
         if (!entry.isIntersecting) return;
         const el = entry.target;
-        // fade-in
         el.classList.add('fade-in');
 
-        // images lazy-load
         if (el.tagName === 'IMG' && el.dataset && el.dataset.src) {
           if (!el.src) el.src = el.dataset.src;
         }
 
-        // video: load source when visible
         if (el.tagName === 'VIDEO') {
           const srcEl = el.querySelector('source[data-src]');
           if (srcEl && !srcEl.src) {
@@ -351,13 +417,12 @@
       });
     }, { threshold: 0.12, rootMargin: '200px' });
 
-    // observe important elements
     document.querySelectorAll('.section, .card, .hero, .gallery img, video').forEach(el => {
       el.classList.add('fade-init');
       io.observe(el);
     });
 
-    // Contact form validation & friendly UX
+    // --- Contact form simplified (tu lógica original) --------------------
     const form = document.getElementById('contactForm');
     const formMsg = document.getElementById('formMsg');
     if (form) {
@@ -381,12 +446,6 @@
         formMsg.textContent = 'Enviando…';
         formMsg.style.color = 'var(--muted)';
 
-        // payload ready for fetch
-        const payload = {
-          nombre, email, telefono: form.telefono.value.trim(), servicio: form.servicio.value, mensaje
-        };
-
-        // Replace this timeout with fetch POST to your backend / Apps Script
         setTimeout(() => {
           formMsg.textContent = '¡Gracias! Tu solicitud fue recibida. Te contactaremos pronto.';
           formMsg.style.color = 'var(--accent)';
@@ -395,16 +454,15 @@
         }, 800);
       });
 
-      // clear form message on input
       form.querySelectorAll('input, textarea, select').forEach(el => el.addEventListener('input', ()=>{ formMsg.textContent=''; }));
     }
 
-    // small helpers
+    // year helper
     const yearEl = document.getElementById('year');
     if (yearEl) yearEl.textContent = new Date().getFullYear();
 
     // focus first input when clicking contacto links
-    document.querySelectorAll('a[href="#contacto"]').forEach(a => a.addEventListener('click', ()=> setTimeout(()=> document.getElementById('nombre')?.focus(), 600)));
+    document.querySelectorAll('a[href="#contacto"]').forEach(a => a.addEventListener('click', ()=> setTimeout(()=> document.getElementById('nombre')?.focus(), 900)));
   </script>
 </body>
 </html>
