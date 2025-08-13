@@ -127,9 +127,8 @@
 </head>
 <body>
   <header class="wrap">
-    <nav class="nav-inner" aria-label="Navegación principal">
-      <div class="brand">
-        <!-- replace with your logo file -->
+    <nav class="nav-inner" aria-label="Navegación principal" style="position:sticky;top:0;z-index:100;background:linear-gradient(180deg,rgba(15,15,16,0.98),rgba(15,17,19,0.98));backdrop-filter:blur(6px);border-radius:12px 12px 0 0;">
+      <div class="brand" style="position:relative;z-index:2;background:none;">
         <img src="assets/Mic.jpeg" alt="logo Mictlan" class="logo-img" />
         <div class="wordmark">
           <div class="brand-title gradient">Mictlan</div>
@@ -137,8 +136,8 @@
         </div>
       </div>
 
-      <div class="nav-toggle">
-        <div class="menu" role="menubar">
+      <div class="nav-toggle" style="position:relative;z-index:2;">
+        <div class="menu" role="menubar" style="position:sticky;top:0;z-index:100;background:linear-gradient(180deg,rgba(15,15,16,0.98),rgba(15,17,19,0.98));border-radius:12px;box-shadow:0 2px 12px #0002;">
           <a class="nav-link" href="#inicio">Inicio</a>
           <a class="nav-link" href="#servicios">Servicios</a>
           <a class="nav-link" href="#portafolio">Portafolio</a>
@@ -217,13 +216,14 @@
       </div>
 
       <!-- IMPROVED CTA BLOCK -->
-      <div class="cta-block" role="region" aria-label="Llamado a la acción - reservar cita">
-        <div class="cta-title">
-          ¡Agenda tu cita y vive la experiencia <span class="mictlan-mark">MICTLAN</span> en tu espacio!
+      <div class="cta-block" role="region" aria-label="Llamado a la acción - reservar cita" style="background:linear-gradient(90deg,#f0b24a 80%,#ff5c7c 100%);box-shadow:0 2px 16px #0002;padding:18px 16px;border-radius:14px;display:flex;flex-direction:column;gap:10px;align-items:flex-start;">
+        <div class="cta-title" style="color:#222;font-size:1.08rem;font-weight:800;">
+          ¡Agenda tu cita y vive la experiencia <span class="mictlan-mark" style="color:#ff5c7c;background:none;-webkit-background-clip:initial;background-clip:initial;text-shadow:0 2px 8px #fff,0 0 2px #f0b24a;">MICTLAN</span> en tu espacio!
         </div>
-        <div class="cta-note">
+        <div class="cta-note" style="color:#222;font-size:1rem;">
           Servicio profesional y seguro — materiales 100% estériles y protocolos certificados. Reserva por WhatsApp o correo y te confirmamos horario.
         </div>
+        <a href="#contacto" class="cta" style="margin-top:8px;background:linear-gradient(90deg,#ffb24a 70%,#ff5c7c 100%);color:#222;font-weight:700;font-size:1.08rem;padding:10px 22px;border-radius:10px;box-shadow:0 2px 8px #0001;text-shadow:none;border:none;">Reservar cita</a>
       </div>
     </section>
 
