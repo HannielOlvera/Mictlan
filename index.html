@@ -4,205 +4,92 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Estudio de Tatuaje - Mictlan</title>
-    <!-- Bootstrap 5 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" defer></script>
-    <script defer src="main.js"></script>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="main.js"></script>
 </head>
 <body>
   <header>
-    <nav class="navbar navbar-expand-lg bg-white shadow-sm py-2">
-      <div class="container-fluid">
-        <a class="navbar-brand d-flex align-items-center gap-3" href="#inicio">
-          <img src="assets/Mic.jpeg" alt="Logo Mictlan" class="logo-img" style="max-width:70px;max-height:70px;border-radius:50%;object-fit:cover;">
-          <span class="logo-text">Mictlan</span>
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="mainNav">
-          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center gap-lg-2">
-            <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
-            <li class="nav-item"><a class="nav-link" href="#servicios">Servicios</a></li>
-            <li class="nav-item"><a class="nav-link" href="#artistas">Artistas</a></li>
-            <li class="nav-item"><a class="nav-link" href="#galeria">Galería</a></li>
-            <li class="nav-item"><a class="nav-link" href="#testimonios">Testimonios</a></li>
-            <li class="nav-item"><a class="btn btn-dark px-4 py-2 ms-lg-2 mt-2 mt-lg-0" href="#contacto">Reserva</a></li>
-          </ul>
-        </div>
-      </div>
+    <nav class="navbar">
+  <div class="logo">Mictlan</div>
+      <ul class="nav-links">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#artistas">Artistas</a></li>
+        <li><a href="#galeria">Galería</a></li>
+        <li><a href="#testimonios">Testimonios</a></li>
+        <li><a href="#contacto" class="cta-btn">Reserva</a></li>
+      </ul>
     </nav>
   </header>
-  <main class="bg-light">
-    <section id="inicio" class="container py-5 text-center">
-      <h1 class="display-5 fw-bold mb-3">Tatuajes Profesionales a Domicilio</h1>
-      <p class="lead mb-4">¡Llevo el arte a tu casa! Tatuajes personalizados, seguros y profesionales donde tú estés. Sin local, sin complicaciones, solo arte y comodidad.</p>
-      <a href="#contacto" class="btn btn-dark btn-lg mb-3">Reserva tu cita a domicilio</a>
-      <div class="mb-3">
-        <span class="badge rounded-pill bg-success-subtle text-success-emphasis px-3 py-2 fs-6 shadow-sm">Servicio en Querétaro</span>
-      </div>
-      <div class="d-flex flex-wrap justify-content-center gap-2 mb-2">
-        <span class="badge rounded-pill bg-dark text-white px-3 py-2 fs-6 mb-1">✔️ Certificados en bioseguridad</span>
-        <span class="badge rounded-pill bg-dark text-white px-3 py-2 fs-6 mb-1">✔️ Materiales 100% estériles</span>
-        <span class="badge rounded-pill bg-dark text-white px-3 py-2 fs-6 mb-1">✔️ Servicio profesional a domicilio</span>
-        <span class="badge rounded-pill bg-dark text-white px-3 py-2 fs-6 mb-1">✔️ Experiencia y trato personalizado</span>
+  <main>
+    <section id="inicio" class="hero">
+      <h1>Tatuajes Profesionales a Domicilio</h1>
+      <p>¡Llevo el arte a tu casa! Tatuajes personalizados, seguros y profesionales donde tú estés. Sin local, sin complicaciones, solo arte y comodidad.</p>
+  <a href="#contacto" class="cta-btn">Reserva tu cita a domicilio</a>
+  <div style="margin-top:1.2rem;font-size:1.2rem;color:#222;font-weight:600;letter-spacing:1px;">Servicio en Querétaro</div>
+      <div class="hero-trust">
+        <span>✔️ Certificados en bioseguridad</span>
+        <span>✔️ Materiales 100% estériles</span>
+        <span>✔️ Servicio profesional a domicilio</span>
+        <span>✔️ Experiencia y trato personalizado</span>
       </div>
     </section>
-    <section id="servicios" class="container py-4">
-      <h2 class="h3 fw-bold mb-4 text-center">¿Cómo funciona el servicio a domicilio?</h2>
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 justify-content-center">
-        <div class="col">
-          <div class="card h-100 border-0 shadow-sm bg-body-tertiary">
-            <div class="card-body text-center py-4">
-              <i class="bi bi-house-door fs-1 mb-2 text-primary"></i>
-              <p class="card-text mb-0">Me desplazo a tu casa o espacio seguro</p>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card h-100 border-0 shadow-sm bg-body-tertiary">
-            <div class="card-body text-center py-4">
-              <i class="bi bi-shield-check fs-1 mb-2 text-success"></i>
-              <p class="card-text mb-0">Llevo todo el material estéril y profesional</p>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card h-100 border-0 shadow-sm bg-body-tertiary">
-            <div class="card-body text-center py-4">
-              <i class="bi bi-pencil fs-1 mb-2 text-dark"></i>
-              <p class="card-text mb-0">Diseño personalizado y consultoría previa online</p>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card h-100 border-0 shadow-sm bg-body-tertiary">
-            <div class="card-body text-center py-4">
-              <i class="bi bi-brush fs-1 mb-2 text-warning"></i>
-              <p class="card-text mb-0">Tatuajes de todos los estilos y tamaños</p>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card h-100 border-0 shadow-sm bg-body-tertiary">
-            <div class="card-body text-center py-4">
-              <i class="bi bi-heart-pulse fs-1 mb-2 text-danger"></i>
-              <p class="card-text mb-0">Asesoría de cuidados y seguimiento</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <p class="text-center mt-4 text-secondary-emphasis small">¡Tú eliges el lugar y el horario! Solo agenda y disfruta de tu tatuaje sin salir de casa.</p>
+    <section id="servicios" class="section">
+      <h2>¿Cómo funciona el servicio a domicilio?</h2>
+      <ul class="estilos-lista">
+        <li>Me desplazo a tu casa o espacio seguro</li>
+        <li>Llevo todo el material estéril y profesional</li>
+        <li>Diseño personalizado y consultoría previa online</li>
+        <li>Tatuajes de todos los estilos y tamaños</li>
+        <li>Asesoría de cuidados y seguimiento</li>
+      </ul>
+      <p style="text-align:center;margin-top:1.5rem;color:#222;">¡Tú eliges el lugar y el horario! Solo agenda y disfruta de tu tatuaje sin salir de casa.</p>
     </section>
-    <section id="artistas" class="container py-4">
-      <h2 class="h3 fw-bold mb-4 text-center">Artista</h2>
-      <div class="row justify-content-center">
-        <div class="col-12 col-md-8 col-lg-6">
-          <div class="card h-100 border-0 shadow-sm text-center p-4 bg-body-tertiary">
-            <img src="Logo.jpeg" alt="gonzalez.joshh" class="rounded-circle mx-auto mb-3 border border-3 border-dark-subtle" style="width:100px;height:100px;object-fit:cover;">
-            <h3 class="h5 mb-2">gonzalez.joshh</h3>
-            <p class="mb-0 text-secondary">Artista profesional de tatuaje a domicilio.<br><small>Especialidad: estilos personalizados y atención segura en tu espacio.</small></p>
-          </div>
+    <section id="artistas" class="section">
+      <h2>Artista</h2>
+      <div class="artistas-grid">
+        <div class="artista-card">
+          <img src="Logo.jpeg" alt="gonzalez.joshh">
+          <h3>gonzalez.joshh</h3>
+          <p>Artista profesional de tatuaje a domicilio.<br><small>Especialidad: estilos personalizados y atención segura en tu espacio.</small></p>
         </div>
       </div>
     </section>
-    <section id="galeria" class="container py-4">
-      <h2 class="h3 fw-bold mb-3 text-center">Galería: Tatuajes realizados por días</h2>
-      <div class="row g-3 justify-content-center">
-        <div class="col-6 col-md-4 col-lg-3">
-          <img src="assets/WhatsApp Image 2025-08-12 at 6.15.27 PM.jpeg" alt="Tatuaje 1" class="img-fluid rounded shadow-sm">
-        </div>
-        <div class="col-6 col-md-4 col-lg-3">
-          <img src="assets/WhatsApp Image 2025-08-12 at 6.15.28 PM (1).jpeg" alt="Tatuaje 2" class="img-fluid rounded shadow-sm">
-        </div>
-        <div class="col-6 col-md-4 col-lg-3">
-          <img src="assets/WhatsApp Image 2025-08-12 at 6.15.28 PM (2).jpeg" alt="Tatuaje 3" class="img-fluid rounded shadow-sm">
-        </div>
-        <div class="col-6 col-md-4 col-lg-3">
-          <img src="assets/WhatsApp Image 2025-08-12 at 6.15.28 PM.jpeg" alt="Tatuaje 4" class="img-fluid rounded shadow-sm">
-        </div>
-        <div class="col-12 col-md-8 mt-3">
-          <video src="assets/WhatsApp Video 2025-08-12 at 6.15.28 PM.mp4" controls class="w-100 rounded shadow-sm" style="max-height:300px;background:#000;"></video>
-        </div>
+    <section id="galeria" class="section">
+      <h2>Galería: Tatuajes realizados por días</h2>
+      <div class="galeria-grid">
+        <img src="assets/WhatsApp Image 2025-08-12 at 6.15.27 PM.jpeg" alt="Tatuaje 1">
+        <img src="assets/WhatsApp Image 2025-08-12 at 6.15.28 PM (1).jpeg" alt="Tatuaje 2">
+        <img src="assets/WhatsApp Image 2025-08-12 at 6.15.28 PM (2).jpeg" alt="Tatuaje 3">
+        <img src="assets/WhatsApp Image 2025-08-12 at 6.15.28 PM.jpeg" alt="Tatuaje 4">
+        <video src="assets/WhatsApp Video 2025-08-12 at 6.15.28 PM.mp4" controls style="width:100%;border-radius:10px;margin-top:1rem;max-height:300px;background:#000;"></video>
       </div>
-      <p class="text-center mt-4 text-muted">Todos los tatuajes y videos de la galería son trabajos reales hechos a domicilio.</p>
+      <p style="text-align:center;margin-top:1.5rem;color:#222;">Todos los tatuajes y videos de la galería son trabajos reales hechos a domicilio.</p>
     </section>
-    <section id="testimonios" class="container py-4">
-      <h2 class="h3 fw-bold mb-4 text-center">Testimonios</h2>
-      <div class="row justify-content-center g-3">
-        <div class="col-12 col-md-6 col-lg-4">
-          <blockquote class="blockquote bg-white rounded-4 shadow-sm p-4 h-100 border-0">“Excelente atención y resultados increíbles. ¡Repetiré sin duda!”<br><span class="blockquote-footer mt-2">Mariana G.</span></blockquote>
-        </div>
-        <div class="col-12 col-md-6 col-lg-4">
-          <blockquote class="blockquote bg-white rounded-4 shadow-sm p-4 h-100 border-0">“Ambiente limpio, seguro y profesional. 100% recomendado.”<br><span class="blockquote-footer mt-2">Diego P.</span></blockquote>
-        </div>
-        <div class="col-12 col-md-6 col-lg-4">
-          <blockquote class="blockquote bg-white rounded-4 shadow-sm p-4 h-100 border-0">“El mejor estudio de la ciudad, artistas muy talentosos.”<br><span class="blockquote-footer mt-2">Laura V.</span></blockquote>
-        </div>
+    <section id="testimonios" class="section">
+      <h2>Testimonios</h2>
+      <div class="testimonios-grid">
+        <blockquote>“Excelente atención y resultados increíbles. ¡Repetiré sin duda!”<br><span>- Mariana G.</span></blockquote>
+        <blockquote>“Ambiente limpio, seguro y profesional. 100% recomendado.”<br><span>- Diego P.</span></blockquote>
+        <blockquote>“El mejor estudio de la ciudad, artistas muy talentosos.”<br><span>- Laura V.</span></blockquote>
       </div>
     </section>
-    <section id="contacto" class="container py-4">
-      <h2 class="h3 fw-bold mb-3 text-center">Reserva tu cita</h2>
-      <form id="contactForm" class="mx-auto" style="max-width:400px;">
-        <div class="mb-3">
-          <input type="text" name="nombre" class="form-control" placeholder="Tu nombre" required>
-        </div>
-        <div class="mb-3">
-          <input type="email" name="email" class="form-control" placeholder="Tu email" required>
-        </div>
-        <div class="mb-3">
-          <textarea name="mensaje" class="form-control" placeholder="¿Qué estilo buscas? Cuéntanos tu idea..." required></textarea>
-        </div>
-        <button type="submit" class="btn btn-dark w-100">Enviar</button>
+    <section id="contacto" class="section contacto">
+      <h2>Reserva tu cita</h2>
+      <form id="contactForm">
+        <input type="text" name="nombre" placeholder="Tu nombre" required>
+        <input type="email" name="email" placeholder="Tu email" required>
+        <textarea name="mensaje" placeholder="¿Qué estilo buscas? Cuéntanos tu idea..." required></textarea>
+        <button type="submit">Enviar</button>
       </form>
-      <div id="formMsg" class="text-center mt-3"></div>
-      <div class="contact-info text-center mt-3">
-        <p class="text-muted">Servicio 100% a domicilio en toda la ciudad y alrededores. ¡Consulta disponibilidad!</p>
+      <div id="formMsg"></div>
+      <div class="contact-info">
+        <p style="margin-top:1rem;">Servicio 100% a domicilio en toda la ciudad y alrededores. ¡Consulta disponibilidad!</p>
       </div>
     </section>
   </main>
-    <!-- Bottom Navigation para mobile -->
-    <nav class="navbar fixed-bottom d-md-none bg-white border-top shadow-sm" style="z-index:1050;">
-      <div class="container-fluid justify-content-around px-0">
-        <a class="nav-link text-center flex-fill py-2" href="#inicio">
-          <i class="bi bi-house-door fs-4"></i><br><span class="small">Inicio</span>
-        </a>
-        <a class="nav-link text-center flex-fill py-2" href="#servicios">
-          <i class="bi bi-gear fs-4"></i><br><span class="small">Servicios</span>
-        </a>
-        <a class="nav-link text-center flex-fill py-2" href="#galeria">
-          <i class="bi bi-images fs-4"></i><br><span class="small">Galería</span>
-        </a>
-        <a class="nav-link text-center flex-fill py-2" href="#contacto">
-          <i class="bi bi-chat-dots fs-4"></i><br><span class="small">Contacto</span>
-        </a>
-      </div>
-    </nav>
   <footer>
     <p>&copy; 2025 Mictlan. Estudio profesional de tatuaje. Todos los derechos reservados.</p>
   </footer>
-  <style>
-    /* Mobile-first: cards y secciones con más aire */
-    @media (max-width: 600px) {
-      .card { border-radius: 1.2rem !important; margin-bottom: 1.2rem; }
-      .card-body { padding: 1.5rem 1rem !important; }
-      .container, .container-fluid { padding-left: 0.7rem !important; padding-right: 0.7rem !important; }
-      h1, h2, h3 { font-size: 1.2rem !important; }
-      .display-5 { font-size: 1.5rem !important; }
-      .navbar.fixed-bottom { box-shadow: 0 -2px 12px rgba(0,0,0,0.07) !important; }
-      .badge { font-size: 0.98rem !important; padding: 0.6em 1.1em !important; }
-      .rounded-circle { width: 70px !important; height: 70px !important; }
-      .form-control { font-size: 1rem !important; border-radius: 0.8rem !important; }
-      .btn { font-size: 1.1rem !important; border-radius: 0.8rem !important; }
-      .row.g-3, .row { gap: 0.7rem !important; }
-    }
-    /* Bottom nav active state */
-    .navbar.fixed-bottom .nav-link.active, .navbar.fixed-bottom .nav-link:focus {
-      color: #111 !important;
-      font-weight: 600;
-    }
-    .navbar.fixed-bottom .nav-link { color: #888; transition: color 0.2s; }
-  </style>
-  </body>
+</body>
 </html>
