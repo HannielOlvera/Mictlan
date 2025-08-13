@@ -18,139 +18,23 @@
   object-fit: cover;
   margin-bottom: 0;
 }
-@media (max-width: 800px) {
-  .logo-img {
-    max-width: 60px;
-    max-height: 60px;
-  }
-  .logo-text {
-    font-size: 1.4rem;
-  }
-}
-/* Animaciones profesionales */
-.fade-init {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.8s cubic-bezier(.4,0,.2,1), transform 0.8s cubic-bezier(.4,0,.2,1);
-}
-.fade-in {
-  opacity: 1 !important;
-  transform: none !important;
-}
-.section-focus {
-  box-shadow: 0 0 0 4px #1112, 0 2px 16px #0001;
-  transition: box-shadow 0.4s;
-}
-@font-face {
-  font-family: 'Original Gangsta';
-  src: url('assets/AngillaTattoo.ttf') format('truetype');
-  font-display: swap;
-}
-/* Testimonios y conversión */
-.testimonios-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  justify-content: center;
-  margin-top: 1.5rem;
-}
-.testimonios-grid blockquote {
-  background: var(--gray);
-  border-left: 4px solid var(--primary);
-  padding: 1.2rem 1.5rem;
-  border-radius: 10px;
-  font-style: italic;
-  color: var(--secondary);
-  max-width: 320px;
-  min-width: 220px;
-  margin: 0;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
-}
-.testimonios-grid span {
-  display: block;
-  margin-top: 0.7rem;
-  font-size: 0.95rem;
-  color: var(--primary);
-  font-style: normal;
-}
-.hero-trust {
-  display: flex;
-  gap: 2rem;
-  justify-content: center;
-  margin-top: 2rem;
-  font-size: 1.1rem;
-  color: var(--secondary);
-  flex-wrap: wrap;
-}
-.contact-info {
-  margin-top: 2rem;
-  text-align: center;
-  color: var(--secondary);
-  font-size: 1.05rem;
-}
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
-:root {
-  --primary: #111;
-  --secondary: #222;
-  --accent: #fff;
-  --gray: #f5f5f5;
-  --border: #e0e0e0;
-  --cta: #111;
-  --cta-hover: #fff;
-  --cta-bg: #111;
-  --cta-bg-hover: #333;
-}
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-body {
-  font-family: 'Montserrat', sans-serif;
-  background: var(--accent);
-  color: var(--primary);
-  min-height: 100vh;
-  line-height: 1.6;
-}
-header {
-  background: var(--accent);
-  border-bottom: 1px solid var(--border);
-  position: sticky;
-  top: 0;
-  z-index: 10;
-}
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0.7rem 2rem;
-}
-.logo {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  gap: 1.2em;
-}
 .logo-text {
-  font-size: 2.2rem;
-  font-family: 'Montserrat', sans-serif;
+  font-size: 2rem;
+  font-family: 'Montserrat', Arial, sans-serif;
   font-weight: 700;
   letter-spacing: 2px;
-  color: var(--primary);
+  color: #111;
   text-shadow: 0 2px 8px #eee;
   line-height: 1.1;
   margin-top: 0.1em;
 }
 .logo-img {
-  max-width: 130px;
-  max-height: 130px;
+  max-width: 70px;
+  max-height: 70px;
   border-radius: 50%;
-  box-shadow: 0 2px 16px #0002;
   object-fit: cover;
   margin-bottom: 0;
+  box-shadow: 0 2px 8px #0001;
 }
 .logo:hover {
   color: #222;
