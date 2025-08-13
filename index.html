@@ -8,10 +8,13 @@
   <script defer src="main.js"></script>
 </head>
 <body>
-  <header>
-    <nav class="navbar">
-  <div class="logo">Mictlan</div>
-      <ul class="nav-links">
+  <header style="background:#fff;position:sticky;top:0;z-index:10;border-bottom:1px solid #eee;">
+    <nav class="navbar" style="display:flex;flex-direction:column;align-items:center;gap:0.5rem;padding:1.2rem 1rem 0.7rem 1rem;max-width:100vw;">
+      <div style="display:flex;flex-direction:column;align-items:center;gap:0.2rem;width:100%;">
+        <img src="Logo.jpeg" alt="Mictlan Logo" style="width:70px;height:70px;object-fit:cover;border-radius:50%;box-shadow:0 2px 12px #0002;">
+        <span style="font-family:'AngillaTattoo',cursive,sans-serif;font-size:2.3rem;letter-spacing:2px;color:#111;line-height:1.1;text-shadow:2px 2px 6px #bbb,0 2px 8px #fff;">Mictlan</span>
+      </div>
+      <ul class="nav-links" style="display:flex;gap:1.2rem;list-style:none;margin-top:0.7rem;flex-wrap:wrap;justify-content:center;width:100%;">
         <li><a href="#inicio">Inicio</a></li>
         <li><a href="#servicios">Servicios</a></li>
         <li><a href="#artistas">Artistas</a></li>
@@ -22,9 +25,9 @@
     </nav>
   </header>
   <main>
-    <section id="inicio" class="hero" style="padding-bottom:2.5rem;">
-      <h1 style="font-size:2.2rem;font-weight:800;margin-bottom:0.7rem;letter-spacing:1px;">Tatuajes Profesionales a Domicilio</h1>
-      <p style="font-size:1.15rem;color:#222;margin-bottom:1.2rem;">¡Llevo el arte a tu casa! Tatuajes personalizados, seguros y profesionales donde tú estés. Sin local, sin complicaciones, solo arte y comodidad.</p>
+    <section id="inicio" class="hero" style="padding-bottom:2.5rem;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:340px;">
+      <h1 style="font-size:2.1rem;font-weight:800;margin-bottom:0.7rem;letter-spacing:1px;text-align:center;max-width:420px;">Tatuajes Profesionales a Domicilio</h1>
+      <p style="font-size:1.13rem;color:#222;margin-bottom:1.2rem;text-align:center;max-width:420px;">¡Llevo el arte a tu casa! Tatuajes personalizados, seguros y profesionales donde tú estés. Sin local, sin complicaciones, solo arte y comodidad.</p>
       <a href="#contacto" class="cta-btn" style="margin-bottom:1.2rem;">Reserva tu cita a domicilio</a>
       <div style="margin:1.5rem auto 0 auto;max-width:340px;display:flex;flex-wrap:wrap;gap:0.7rem;justify-content:center;">
         <span style="background:#e6f4ea;color:#1a7f4c;font-weight:600;padding:0.5em 1.2em;border-radius:20px;font-size:1.05rem;box-shadow:0 1px 6px #0001;">Servicio en Querétaro</span>
@@ -108,5 +111,70 @@
   <footer>
     <p>&copy; 2025 Mictlan. Estudio profesional de tatuaje. Todos los derechos reservados.</p>
   </footer>
+  </main>
+  <!-- Bottom Navigation para mobile tipo app -->
+  <nav class="navbar fixed-bottom d-md-none bg-white border-top shadow-sm" style="z-index:1050;">
+    <div class="container-fluid justify-content-around px-0">
+      <a class="nav-link text-center flex-fill py-2" href="#inicio">
+        <span style="font-size:1.5rem;display:block;">🏠</span>
+        <span class="small">Inicio</span>
+      </a>
+      <a class="nav-link text-center flex-fill py-2" href="#servicios">
+        <span style="font-size:1.5rem;display:block;">🛠️</span>
+        <span class="small">Servicios</span>
+      </a>
+      <a class="nav-link text-center flex-fill py-2" href="#galeria">
+        <span style="font-size:1.5rem;display:block;">🖼️</span>
+        <span class="small">Galería</span>
+      </a>
+      <a class="nav-link text-center flex-fill py-2" href="#contacto">
+        <span style="font-size:1.5rem;display:block;">💬</span>
+        <span class="small">Contacto</span>
+      </a>
+    </div>
+  </nav>
+  <style>
+    @media (max-width: 800px) {
+      .navbar.fixed-bottom { display: flex !important; }
+      .section, .hero {
+        border-radius: 0;
+        box-shadow: none;
+        margin: 0;
+        padding-left: 0.5rem !important;
+        padding-right: 0.5rem !important;
+      }
+      .hero {
+        padding-top: 2.5rem !important;
+        padding-bottom: 2.5rem !important;
+      }
+      .section h2, .hero h1 {
+        font-size: 1.2rem !important;
+        margin-bottom: 1rem !important;
+      }
+      .cta-btn {
+        width: 100%;
+        font-size: 1.1rem !important;
+        padding: 1rem 0 !important;
+        border-radius: 1.2rem !important;
+        margin-bottom: 1.2rem !important;
+      }
+      .artista-card img {
+        width: 70px !important;
+        height: 70px !important;
+      }
+      .galeria-grid img {
+        height: 110px !important;
+      }
+      .estilos-lista li, .hero-trust span {
+        font-size: 0.98rem !important;
+        padding: 0.6em 1.1em !important;
+        border-radius: 1.2em !important;
+      }
+      .navbar .nav-links { flex-wrap: wrap; gap: 0.7rem !important; }
+    }
+    @media (min-width: 801px) {
+      .navbar.fixed-bottom { display: none !important; }
+    }
+  </style>
 </body>
 </html>
