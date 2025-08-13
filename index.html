@@ -162,8 +162,47 @@
       </div>
     </section>
   </main>
+    <!-- Bottom Navigation para mobile -->
+    <nav class="navbar fixed-bottom d-md-none bg-white border-top shadow-sm" style="z-index:1050;">
+      <div class="container-fluid justify-content-around px-0">
+        <a class="nav-link text-center flex-fill py-2" href="#inicio">
+          <i class="bi bi-house-door fs-4"></i><br><span class="small">Inicio</span>
+        </a>
+        <a class="nav-link text-center flex-fill py-2" href="#servicios">
+          <i class="bi bi-gear fs-4"></i><br><span class="small">Servicios</span>
+        </a>
+        <a class="nav-link text-center flex-fill py-2" href="#galeria">
+          <i class="bi bi-images fs-4"></i><br><span class="small">Galería</span>
+        </a>
+        <a class="nav-link text-center flex-fill py-2" href="#contacto">
+          <i class="bi bi-chat-dots fs-4"></i><br><span class="small">Contacto</span>
+        </a>
+      </div>
+    </nav>
   <footer>
     <p>&copy; 2025 Mictlan. Estudio profesional de tatuaje. Todos los derechos reservados.</p>
   </footer>
-</body>
+  <style>
+    /* Mobile-first: cards y secciones con más aire */
+    @media (max-width: 600px) {
+      .card { border-radius: 1.2rem !important; margin-bottom: 1.2rem; }
+      .card-body { padding: 1.5rem 1rem !important; }
+      .container, .container-fluid { padding-left: 0.7rem !important; padding-right: 0.7rem !important; }
+      h1, h2, h3 { font-size: 1.2rem !important; }
+      .display-5 { font-size: 1.5rem !important; }
+      .navbar.fixed-bottom { box-shadow: 0 -2px 12px rgba(0,0,0,0.07) !important; }
+      .badge { font-size: 0.98rem !important; padding: 0.6em 1.1em !important; }
+      .rounded-circle { width: 70px !important; height: 70px !important; }
+      .form-control { font-size: 1rem !important; border-radius: 0.8rem !important; }
+      .btn { font-size: 1.1rem !important; border-radius: 0.8rem !important; }
+      .row.g-3, .row { gap: 0.7rem !important; }
+    }
+    /* Bottom nav active state */
+    .navbar.fixed-bottom .nav-link.active, .navbar.fixed-bottom .nav-link:focus {
+      color: #111 !important;
+      font-weight: 600;
+    }
+    .navbar.fixed-bottom .nav-link { color: #888; transition: color 0.2s; }
+  </style>
+  </body>
 </html>
